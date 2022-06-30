@@ -1,0 +1,112 @@
+#include<GL/glut.h>
+void myInit()
+{
+	glClearColor(0.0,0.0,0.0,0.0);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0,200.0,0.0,200.0);
+}
+
+void line()
+{
+glLineWidth(10.0);
+glColor3f(1.0,2.0,0.0);
+glBegin(GL_LINES);
+glVertex2i(40,80);
+glVertex2i(40,20);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(80,80);
+glVertex2i(80,20);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(40,20);
+glVertex2i(80,20);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(40,80);
+glVertex2i(80,80);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(40,80);
+glVertex2i(60,120);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(80,80);
+glVertex2i(60,120);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(60,120);
+glVertex2i(150,140);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(80,80);
+glVertex2i(165,95);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(150,140);
+glVertex2i(165,95);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(80,20);
+glVertex2i(165,35);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(165,95);
+glVertex2i(165,35);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(50,50);
+glVertex2i(50,20);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(70,50);
+glVertex2i(70,20);
+glEnd();
+glBegin(GL_LINES);
+glVertex2i(50,50);
+glVertex2i(70,50);
+glEnd();
+glPointSize(8);
+glBegin(GL_POINTS);
+glVertex2i(65,38);
+glEnd();
+glColor3f(0.13,0.54,0.13);
+glBegin(GL_TRIANGLES);
+glVertex2i(0,145);
+glVertex2i(80,145);
+glVertex2i(40,200);
+glEnd();
+glBegin(GL_TRIANGLES);
+glVertex2i(40,145);
+glVertex2i(120,145);
+glVertex2i(83,180);
+glEnd();
+glBegin(GL_TRIANGLES);
+glVertex2i(80,145);
+glVertex2i(160,145);
+glVertex2i(125,200);
+glEnd();
+glColor3f(1.0,1.0,1.0);
+glBegin(GL_LINE_STRIP);
+glVertex2i(66,183);
+glVertex2i(68,186);
+glVertex2i(70,180);
+glVertex2i(72,186);
+glVertex2i(74,183);
+glEnd();
+glFlush();
+}
+
+void main(int argc, char *argv[])
+{
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+	glutInitWindowPosition(0,0);
+	glutInitWindowSize(1000,700);
+	glutCreateWindow("MY FIRST CG PROGRAM");
+	glutDisplayFunc(line);
+	myInit();
+	glutMainLoop();
+}
+
